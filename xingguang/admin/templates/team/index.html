@@ -1,0 +1,82 @@
+{include file="header.html"}
+
+<!-- BEGIN CONTAINER -->
+
+<div class="page-container">
+
+    {include file="sidebar.html"}
+
+    <!-- BEGIN PAGE -->
+
+    <div class="page-content">
+
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <div id="portlet-config" class="modal hide">
+
+            <div class="modal-header">
+
+                <button data-dismiss="modal" class="close" type="button"></button>
+
+                <h3>Widget Settings</h3>
+
+            </div>
+
+            <div class="modal-body">
+
+                Widget settings form goes here
+
+            </div>
+
+        </div>
+
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <!-- BEGIN PAGE CONTAINER-->
+
+        <div class="container-fluid">
+
+            <!-- BEGIN PAGE HEADER-->
+
+            {include file="nav.html"}
+            <!--内容区域-->
+            <div id="main">
+                {if $smarty.session.flag=='y'}<div style="text-align: right"><a class="btn" href="{U('team','add')}">添加设计团队</a></div>{/if}
+                <table class="table table-striped table-bordered table-hover mytable">
+                    <tr height="15%"><th>头像</th><th>序号</th><th>姓名</th><th>职称</th><th>门店</th><th>案例数</th><th>人气</th><th>设计宣言</th><th>操作</th></tr>
+                    {foreach from=$arr item=v}
+                    <tr height="15%" align="center">
+                        <td width="5%"><img width="80%" height="20%"  src="{$v.timage}"></td>
+                        <td><span class="label label-info">{$v.tid}</span></td>
+                        <td><span class="label label-success">{$v.tname|htmlspecialchars}</span></td>
+                        <td><span class="label label-warning">{$v.tposition}</span></td>
+                        <td><span class="label label-inverse">{$v.tstore}</span></td>
+                        <td><span class="label label-important">{$v.tcase}</span></td>
+                        <td><span class="label label-success">{$v.tpop}</span></td>
+                        <td><span class="label label-success">{truncate_zh($v.tdesign|htmlspecialchars,30,"...")}</span></td>
+                        <td><i class="icon-tag"></i> <a href=../{U('team','views',"tid={$v.tid}")} target="_blank">查看</a>
+                            {if $smarty.session.flag=='y'}
+                            | <i class="icon-pencil"></i> <a href={U('team','update',"tid={$v.tid}")}>编辑</a> | <i class="icon-trash"></i> <a onclick="return confirm('亲，数据无价，真的要删除吗？')"  href={U('team','delete',"tid={$v.tid}")}>删除</a>
+                            {/if}
+                        </td>
+                    </tr>
+                    {/foreach}
+                </table>
+                <div class="pc_overflow pagination pagination-large">
+                    <ul>
+                        {$pagestr}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- END PAGE -->
+
+</div>
+
+<!-- END CONTAINER -->
+
+{include file="footer.html"}

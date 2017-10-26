@@ -1,0 +1,98 @@
+{include file="header.html"}
+
+<!-- BEGIN CONTAINER -->
+
+<div class="page-container">
+
+    {include file="sidebar.html"}
+
+    <!-- BEGIN PAGE -->
+
+    <div class="page-content">
+
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <div id="portlet-config" class="modal hide">
+
+            <div class="modal-header">
+
+                <button data-dismiss="modal" class="close" type="button"></button>
+
+                <h3>Widget Settings</h3>
+
+            </div>
+
+            <div class="modal-body">
+
+                Widget settings form goes here
+
+            </div>
+
+        </div>
+
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <!-- BEGIN PAGE CONTAINER-->
+
+        <div class="container-fluid">
+
+            <!-- BEGIN PAGE HEADER-->
+
+            {include file="nav.html"}
+            <script charset="utf-8" src="kindeditor/kindeditor.js"></script>
+            <script charset="utf-8" src="kindeditor/lang/zh_cn.js"></script>
+            {literal}
+            <script>
+                var editor;
+                KindEditor.ready(function(K) {
+                    editor = K.create('#editor_id', {
+                        resizeType : 1,
+                        allowPreviewEmoticons : false,
+                        allowImageUpload : false,
+                        items : [
+                            'source', '|', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                            'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                            'insertunorderedlist', '|', 'emoticons', 'image', 'link','media']
+                    });
+                });
+            </script>
+            <style>
+                .ke-container{width: 500px !important;}
+            </style>
+            {/literal}
+            <!--内容区域-->
+            <div id="main">
+                <form action={U('cases','updateTodo',"caseid={$resone.caseid}")} method="post" enctype="multipart/form-data">
+                    案例名称 : <input type="text" name="casename" value="{$resone.casename}"><br />
+                    装饰风格:
+                    {foreach from=$styleArr item=v}
+                    <div class="radio"><span><input type="radio" name="sid" value="{$v.sid}" {if $v.sid=={$resone.sid}}checked{/if}></span></div>{$v.casestyle}
+                    {/foreach}
+                    <br/><br/>
+                    装饰面积:
+                    {foreach from=$areaArr item=vv}
+                    <div class="radio"><span><input type="radio" name="aid" value="{$vv.aid}" {if $vv.aid=={$resone.aid}}checked{/if}></span></div>{$vv.casearea}
+                    {/foreach}<br/><br/>
+                    装饰户型:
+                    {foreach from=$layoutArr item=vvv}
+                    <div class="radio"><span><input type="radio" name="lid" value="{$vvv.lid}" {if $vvv.lid=={$resone.lid}}checked{/if}></span></div>{$vvv.caselayout}
+                    {/foreach}<br/><br/>
+                    <br/>
+                    案例图片 : <input type="file" name="caseimage">
+                    <br /><br />
+                    <input type="submit" value="更新案例" class="btn">
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- END PAGE -->
+
+</div>
+
+<!-- END CONTAINER -->
+
+{include file="footer.html"}

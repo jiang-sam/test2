@@ -1,0 +1,70 @@
+{include file="header.html"}
+    <!--设计案例-->
+    <div id="case" class="pc_overflow">
+        <div id="case_son" class="w980 mt50">
+            <!--左侧-->
+           {include file="sidebar.html"}
+            <!--右侧-->
+            <style>
+                .cur{
+                    background: #403127;
+                    color: #ffffff !important;
+                }
+            </style>
+            <div id="right" class="fr">
+                <div><span>设计案例　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　Case</span></div>
+                <div><{$smarty.const.TP}img/ src="{$smarty.const.TP}img//line.png" class="mt2" width="723" /></div>
+                <div class="nav  mt15">
+                    <div class="nav_l fl">
+                        <ul class="pc_overflow">
+                            <li><span class="ml5">&nbsp;装饰风格：</span></li>
+                            <li><span class="ml5">&nbsp;装饰面积：</span></li>
+                            <li class="last"><span class="ml5">&nbsp;装饰户型：</span></li>
+                        </ul>
+                    </div>
+                    <div class="nav_r fr">
+                        <ul class="ml2">
+                            <li>
+                                <a href={U('cases','index',"sid=0")} {if empty($smarty['session']['where']['jzy_xingguang_cases.sid'])}class="cur"{/if}}> &nbsp;全部&nbsp;</a>
+                                {foreach from=$styleArr item=v}
+                                    <a href={U('cases','index',"sid={$v.sid}")}  {if $smarty['session']['where']['jzy_xingguang_cases.sid']=={$v.sid}}class="cur"{/if}}>&nbsp;{$v.casestyle}&nbsp;</a>
+                                {/foreach}
+                            </li>
+                            <li>
+                                <a href={U('cases','index',"aid=0")} {if empty($smarty['session']['where']['jzy_xingguang_cases.aid'])}class="cur"{/if}}>&nbsp;全部&nbsp;</a>
+                                {foreach from=$areaArr item=vv}
+                                    <a href={U('cases','index',"aid={$vv.aid}")} {if $smarty['session']['where']['jzy_xingguang_cases.aid']=={$vv.aid}}class="cur"{/if}>&nbsp;{$vv.casearea}&nbsp;</a>
+                                {/foreach}
+                            </li>
+                            <li class="last">
+                                <a href={U('cases','index',"lid=0")} {if empty($smarty['session']['where']['jzy_xingguang_cases.lid'])}class="cur"{/if}}>&nbsp;全部&nbsp;</a>
+                                {foreach from=$layoutArr item=vvv}
+                                    <a href={U('cases','index',"lid={$vvv.lid}")} {if $smarty['session']['where']['jzy_xingguang_cases.lid']=={$vvv.lid}}class="cur"{/if}>&nbsp;{$vvv.caselayout}&nbsp;</a>
+                                {/foreach}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div id="xdjy" class="pc_overflow fr"  style="display:block;">
+                    {foreach from=$arr item=v key=k}
+                    <div id="xdjy_son" class="mt30 fl {if $k%3!=0}ml15{/if}" >
+                        <a href={U('cases','views',"caseid={$v.caseid}")}>
+                            <div><img src="admin/{$v.caseimage}" width="225" height="166" class="pic"/></div>
+                            <div><span class="disBlock">{$v.casename}　　{$v.casestyle}</span></div>
+                        </a>
+                    </div>
+                    {/foreach}
+                </div>
+                <div id="pages" style="float:right;">
+                    <ul>
+                        {$pagestr}
+                    </ul>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+   {include file="footer.html"}

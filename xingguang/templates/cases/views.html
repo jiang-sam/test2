@@ -1,0 +1,59 @@
+{include file="header.html"}
+
+<!--联系我们-->
+<div id="contact" class="pc_overflow">
+    <div id="contact_son" class="w980 mt50">
+        <!--左侧-->
+        {include file="sidebar.html"}
+        <!--右侧-->
+        {literal}
+        <style>
+            #right h1 {
+                color: #403127;
+                font-size: 26px;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            #content {
+                font-family: "宋体";
+                font-size: 14px;
+                line-height: 24px;
+                color:#444444;
+            }
+            #content span{
+                font-size:20px !important;color:#444444;
+            }
+            #content p {
+                line-height: 30px;
+                margin:10px 0px;
+            }
+            #description {
+                border-bottom: 1px dashed #999;
+                color: #666;
+                padding: 5px 0 10px;
+            }
+        </style>
+        {/literal}
+        <div id="right" class="fr ml5">
+            <div><span>精品案例查看　　　　　　　　　　　　　　　　　　　　　　　　　　　　 Cases  show</span></div>
+            <div><img src="{$smarty.const.TP}img/line.png" class="mt2" /></div>
+            <div id="content" class="mt50 ml50">
+                <div class="fl">
+                    <img src="admin/{$resone.caseimage}" width="300" height="220">
+                </div>
+                <div class="fl ml60" style="font-size: 22px; width: 330px;">
+                    <p> 案例名称 : {$resone.casename|htmlspecialchars}</p>
+                    <p> 装饰风格 : {$resone.casestyle|htmlspecialchars}</p>
+                    <p> 装饰面积 : {$resone.casearea|htmlspecialchars}</p>
+                    <p> 装饰户型 : {$resone.caselayout}</p>
+                </div>
+
+            </div>
+            <div class="clear"></div>
+
+
+
+        </div>
+    </div>
+</div>
+{include file="footer.html"}

@@ -1,0 +1,93 @@
+<div class="row-fluid">
+
+    <div class="span12">
+
+        <!-- BEGIN STYLE CUSTOMIZER -->
+
+        <!-- END BEGIN STYLE CUSTOMIZER -->
+
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+
+        <h3 class="page-title">
+
+            星光装饰 <small>欢迎您</small>
+
+        </h3>
+
+        <ul class="breadcrumb">
+
+            <li>
+
+                <i class="icon-home"></i>
+
+                <a href="index.php">Home</a>
+
+                <i class="icon-angle-right"></i>
+
+            </li>
+            {if {$smarty.get.c}=='users'}
+
+            <li><a href={U("users","index")}>用户列表</a></li>
+
+            {else if {$smarty.get.c}=='blogs'}
+
+            <li><a href={U("blogs","index")}>新闻列表</a></li>
+
+            {else if {$smarty.get.c}=='categories'}
+
+            <li><a href={U("categories","index")}>分类列表</a></li>
+
+            {else if {$smarty.get.c}=='friendlink'}
+
+            <li><a href={U("friendlink","index")}>友情链接列表</a></li>
+
+            {else if {$smarty.get.c}=='customer'}
+
+            <li><a href={U("customer","index")}>合作客户列表</a></li>
+
+            {else if {$smarty.get.c}=='team'}
+
+            <li><a href={U("team","index")}>设计团队列表</a></li>
+
+            {else if {$smarty.get.c}=='cases'}
+
+            <li><a href={U("cases","index")}>精品案例列表</a></li>
+
+            {else if {$smarty.get.c}=='area'}
+
+            <li><a href={U("area","index")}>装饰面积列表</a></li>
+
+            {else if {$smarty.get.c}=='layout'}
+
+            <li><a href={U("layout","index")}>装饰户型列表</a></li>
+
+            {else if {$smarty.get.c}=='style'}
+
+            <li><a href={U("style","index")}>装饰风格列表</a></li>
+
+            {else}
+            <li>主 页</li>
+            {/if}
+            <li class="pull-right no-text-shadow"></li>
+
+
+            {if {$smarty.get.a}=='index'}
+
+            {else if {$smarty.get.a}=='update'}
+            &nbsp;&nbsp;<i class="icon-angle-right"></i>&nbsp;&nbsp;
+            <li>更新</li>
+            {else if {$smarty.get.a}=='add'}
+            &nbsp;&nbsp;<i class="icon-angle-right"></i>&nbsp;&nbsp;
+            <li>添加</li>
+            {/if}
+            <li class="pull-right no-text-shadow">
+            </li>
+
+
+        </ul>
+
+        <!-- END PAGE TITLE & BREADCRUMB-->
+
+    </div>
+
+</div>

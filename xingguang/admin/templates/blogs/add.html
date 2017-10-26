@@ -1,0 +1,90 @@
+{include file="header.html"}
+
+<!-- BEGIN CONTAINER -->
+
+<div class="page-container">
+
+    {include file="sidebar.html"}
+
+    <!-- BEGIN PAGE -->
+
+    <div class="page-content">
+
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <div id="portlet-config" class="modal hide">
+
+            <div class="modal-header">
+
+                <button data-dismiss="modal" class="close" type="button"></button>
+
+                <h3>Widget Settings</h3>
+
+            </div>
+
+            <div class="modal-body">
+
+                Widget settings form goes here
+
+            </div>
+
+        </div>
+
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <!-- BEGIN PAGE CONTAINER-->
+
+        <div class="container-fluid">
+
+            <!-- BEGIN PAGE HEADER-->
+
+            {include file="nav.html"}
+            <script charset="utf-8" src="kindeditor/kindeditor.js"></script>
+            <script charset="utf-8" src="kindeditor/lang/zh_cn.js"></script>
+            {literal}
+            <script>
+                var editor;
+                KindEditor.ready(function(K) {
+                    editor = K.create('#editor_id', {
+                        resizeType : 1,
+                        allowPreviewEmoticons : false,
+                        allowImageUpload : false,
+                        items : [
+                            'source', '|', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                            'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                            'insertunorderedlist', '|', 'emoticons', 'image', 'link','media']
+                    });
+                });
+            </script>
+            <style>
+                .ke-container{width: 500px !important;}
+            </style>
+            {/literal}
+            <!--内容区域-->
+            <div id="main">
+                <form action={U('blogs','addTodo')} method="post" enctype="multipart/form-data">
+                    新闻标题: <input type="text" name="title" style="width:430px"/><br />
+                    内　　容: <textarea  name="contents" id="editor_id" /></textarea><br />
+                    分　　类:<select name="cid">
+                    {foreach from=$categoriesArr item=v}
+                    <option value="{$v.cid}">{$v.cname}</option>>
+                    {/foreach}
+
+                </select>
+                    <br /><br />
+                    <input type="submit" value="添加新闻" class="btn">
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- END PAGE -->
+
+</div>
+
+<!-- END CONTAINER -->
+
+{include file="footer.html"}

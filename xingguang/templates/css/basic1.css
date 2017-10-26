@@ -1,0 +1,100 @@
+/**
+*CSS公共层
+*basic.css
+*概念: 每一个网页布局公用的样式
+*Author : 喜洋洋
+*Version: V1.0
+*QQ: 522845646
+**/
+
+/*内外边距*/
+html, body, div, p, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th, td {
+	margin: 0;
+	padding: 0;
+}
+/*字体*/
+body{font:12px/21px '微软雅黑';_font-family:'微软雅黑';}
+
+/*包裹 IE8居中*/
+#wrap{text-align:left;}
+
+/*ul*/
+ul{ list-style:none;}
+
+/*a*/
+a{ text-decoration:none;}
+
+/*img*/
+img{border:0 none;}
+
+/*浮动*/
+.fl{float:left; display:inline;}
+.fr{float:right; display:inline;}
+
+/*清除浮动*/
+.clear{clear:both;}
+
+/*塌陷*/
+.w980{width:980px;margin:0 auto; overflow:hidden; zoom:1}
+.pc_overflow{overflow:hidden; zoom:1}
+
+
+
+/*mt 上外边距*/
+.mt2{margin-top:2px;}
+.mt5{margin-top:5px;}
+.mt10{margin-top:10px;}
+.mt15{margin-top:15px;}
+.mt20{margin-top:20px;}
+.mt25{margin-top:25px;}
+.mt30{margin-top:30px;}
+.mt35{margin-top:35px;}
+.mt40{margin-top:40px;}
+.mt45{margin-top:45px;}
+.mt50{margin-top:50px;}
+.mt55{margin-top:55px;}
+.mt60{margin-top:60px;}
+.mt65{margin-top:65px;}
+.mt75{margin-top:75px;}
+/*ml 左外边距*/
+.ml0{margin-left:0px !important;}
+.ml5{margin-left:5px;}
+.ml10{margin-left:10px;}
+.ml15{margin-left:15px;}
+.ml20{margin-left:20px;}
+.ml25{margin-left:25px;}
+.ml30{margin-left:30px;}
+.ml35{margin-left:35px;}
+.ml40{margin-left:40px;}
+.ml45{margin-left:45px;}
+.ml50{margin-left:50px;}
+.ml55{margin-left:55px;}
+.ml60{margin-left:60px;}
+
+/*text align*/
+.tl{ text-align:left;}
+.tc{ text-align:center;}
+.tr{ text-align:right;}
+
+/*display:block*/
+
+.disBlock{ display:block;}
+
+/*font-size*/
+.ft14{font-size:14px;}
+
+/*line23*/
+.line23{ line-height:23px;}
+
+/*边框去除*/
+.borderNone{ border:0 none !important;}
+
+/*字体加粗*/
+
+.ftW{ font-weight:bold;}
+
+/*ft0*/
+.ft0{font-size:0px !important;}
+
+
+

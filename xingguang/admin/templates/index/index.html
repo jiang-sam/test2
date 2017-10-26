@@ -1,0 +1,101 @@
+{include file="header.html"}
+
+<!-- BEGIN CONTAINER -->
+
+<div class="page-container">
+
+    {include file="sidebar.html"}
+
+    <!-- BEGIN PAGE -->
+
+    <div class="page-content">
+
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <div id="portlet-config" class="modal hide">
+
+            <div class="modal-header">
+
+                <button data-dismiss="modal" class="close" type="button"></button>
+
+                <h3>Widget Settings</h3>
+
+            </div>
+
+            <div class="modal-body">
+
+                Widget settings form goes here
+
+            </div>
+
+        </div>
+
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <!-- BEGIN PAGE CONTAINER-->
+
+        <div class="container-fluid">
+
+            <!-- BEGIN PAGE HEADER-->
+
+            {include file="nav.html"}
+            <!--内容区域-->
+            <div  style="width: 90%; float: left;">
+                <table class="table table-striped table-bordered table-hover mytable">
+                    <tr height="15%"><th>序号</th><th>姓名</th><th>手机</th><th>邮箱</th><th>预约时间</th><th>操作</th></tr>
+                    {foreach from=$arr item=v}
+                    <tr height="15%" align="center">
+                        <td><span class="label label-info">{$v['mid']}</span></td>
+                        <td><span class="label label-success">{$v['xingming']|htmlspecialchars}</span></td>
+                        <td><span class="label label-warning">{$v['shouji']}</span></td>
+                        <td><span class="label label-inverse">{$v['email']}</span></td>
+                        <td><span class="label label-success">{$v['createtime']|date_format:"%Y-%m-%d %H:%M:%S"}</span></td>
+                        <td><a href=../{U('make','views',"mid={$v.mid}")}>{if $v.flag=='y'}<i class=" icon-envelope"></i> 未读{else}<i class="  icon-folder-open"></i> 已读{/if}</a>
+                            {if $smarty.session.flag=='y'}
+                            | <i class="icon-trash"></i> <a onclick="return confirm('亲，数据无价，真的要删除吗？')"  href=../{U('make','delete',"mid={$v.mid}")}>删除</a>
+                            {/if}
+                        </td>
+
+                    </tr>
+                    {/foreach}
+                </table>
+
+           <div class="pc_overflow pagination pagination-large">
+            <ul>
+                {$pagestr}
+            </ul>
+        </div>
+            </div>
+            <script language="javascript1.2" type="text/javascript">
+                function onGetMessage(context)
+                {
+                    msg.innerHTML+=context;
+                    msg_end.scrollIntoView();
+                }
+            </script>
+                <div style="width:5%; float: right;">
+            <div id="view"><h5  align="center">今日访客 {$num}</h5></div>
+                    <div style="height:470px;overflow:auto; border:1px solid red; background: #ffffff; " id="fk">
+                        <div  id="msg" style="overflow:hidden; padding: 5px;">
+                            {foreach from=$view item=v key=k}
+                            <p align="center" style="background: #ededed; padding: 5px;"><img src="{$v.avatar|default:'templates/img/3.jpeg'}" width="80%" height="60%"><br/>{$v.username}<br/>{$v['vtime']|date_format:"%H:%M:%S"}</p>
+                            {/foreach}
+                        </div>
+                        <div id="msg_end" style="height:0px; overflow:hidden"></div>
+                    </div>
+
+                </div>
+                </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- END PAGE -->
+
+</div>
+
+<!-- END CONTAINER -->
+
+{include file="footer.html"}

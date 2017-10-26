@@ -1,0 +1,29 @@
+<div id="footer" class="pc_overflow">
+    <div class="footerson w980">
+        <p class="p1 mt10">
+            <font class="a1">友情链接:</font>
+            {foreach from=$friendlinkArr item=v}
+            <a href="{$v.furl}" target="_blank nofollow">{$v.fname|htmlspecialchars}</a>
+            {/foreach}
+        </p>
+        <img class="img1" src="{$smarty.const.TP}img/footer1.png" width="258" height="51" />
+        <img class="img1" src="{$smarty.const.TP}img/footer2.png" width="258" height="51" />
+        <img class="img1" src="{$smarty.const.TP}img/footer3.png" width="258" height="51" />
+        <p class="mt10"><a href="{U('about','index')}">公司简介</a>  |   <a href="{U('contact','index')}">联系我们</a>  |  <a href="http://wpa.qq.com/msgrd?v=3&uin=2254682944" target="_blank">在线咨询</a>  |   <a href="{U('contact','index')}">网站地图</a></p>
+        <div class="footerb">
+            <p class="mt5 fl">@版权所有 星光装饰设计有限公司<br />皖ICP备120968号</p>
+            <ul class="fr pc_overflow">
+                <li class="fl mt10"><p>分享到:</p></li>
+                <li class="fl ml10 mt10"><img src="{$smarty.const.TP}img/qqkj.png" width="24" height="24" /></li>
+                <li class="fl ml10 mt10"><img src="{$smarty.const.TP}img/weix.png" width="24" height="24" /></li>
+                <li class="fl ml10 mt10"><img src="{$smarty.const.TP}img/txwb.png" width="24" height="24" /></li>
+                <li class="fl ml10 mt10"><img src="{$smarty.const.TP}img/xlwb.png" width="24" height="24" /></li>
+                <li class="fl ml10 mt10"><img src="{$smarty.const.TP}img/tieba.png" width="24" height="24" /></li>
+                <li class="fl ml10 mt10"><img src="{$smarty.const.TP}img/gengd.png" width="24" height="24" /></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

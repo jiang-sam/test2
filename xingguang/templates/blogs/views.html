@@ -1,0 +1,68 @@
+{include file="header.html"}
+
+<!--联系我们-->
+<div id="contact" class="pc_overflow">
+    <div id="contact_son" class="w980 mt50">
+        <!--左侧-->
+        {include file="sidebar.html"}
+        <!--右侧-->
+        {literal}
+        <style>
+            #right h1 {
+                color: #403127;
+                font-size: 26px;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            #content {
+                font-family: "宋体";
+                font-size: 14px;
+                line-height: 24px;
+                color:#444444;
+            }
+            #content span{
+                font-size:14px !important;color:#444444;
+            }
+            #content p {
+                line-height: 24px;
+                margin:10px 0px;
+            }
+            #description {
+                border-bottom: 1px dashed #999;
+                color: #666;
+                padding: 5px 0 10px;
+            }
+        </style>
+        {/literal}
+        <div id="right" class="fr ml5">
+            <div><span>文章查看　　　　　　　　　　　　　　　　　　　　　　　　　　　　 　　Blogs  show</span></div>
+            <div><img src="{$smarty.const.TP}img/line.png" class="mt2" /></div>
+            <h1 class="mt25">{$resone.title|htmlspecialchars}</h1><br>
+            <div id="description">
+                作者 : {$resone.username|htmlspecialchars}&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;
+                所属分类 : {$resone.cname|htmlspecialchars}&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;
+                点击数 : {$resone.hits}&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;
+                发布时间 : {$resone.createtime|date_format:"%Y-%m-%d  %H:%M:%S"}
+            </div><br>
+            <div id="content">
+                <script language="javascript1.2" type="text/javascript">
+                function onGetMessage(context)
+                {
+                msg.innerHTML+=context;
+                msg_end.scrollIntoView();
+                }
+                </script>
+                <div style="height:500px;overflow:auto; border:1px solid ; background: #ffffff;">
+                        <div  id="msg" style="overflow:hidden;width:690px; padding: 15px;">{$resone.contents}</div>
+                        <div id="msg_end" style="height:0px; overflow:hidden"></div>
+                        </div>
+
+            </div>
+            <div class="clear"></div>
+
+
+
+        </div>
+    </div>
+</div>
+{include file="footer.html"}

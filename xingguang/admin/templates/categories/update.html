@@ -1,0 +1,64 @@
+{include file="header.html"}
+
+<!-- BEGIN CONTAINER -->
+
+<div class="page-container">
+
+    {include file="sidebar.html"}
+
+    <!-- BEGIN PAGE -->
+
+    <div class="page-content">
+
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <div id="portlet-config" class="modal hide">
+
+            <div class="modal-header">
+
+                <button data-dismiss="modal" class="close" type="button"></button>
+
+                <h3>Widget Settings</h3>
+
+            </div>
+
+            <div class="modal-body">
+
+                Widget settings form goes here
+
+            </div>
+
+        </div>
+
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <!-- BEGIN PAGE CONTAINER-->
+
+        <div class="container-fluid">
+
+            <!-- BEGIN PAGE HEADER-->
+
+            {include file="nav.html"}
+            <!--内容区域-->
+            <div id="main">
+
+                <form action={U('categories','updateTodo',"cid={$resone.cid}")} method="post" enctype="multipart/form-data">
+
+                    分类名称: <input type="text" name="cname" value="{$resone.cname}"/><br /><br />
+
+                    <input type="submit" value="我要更新" class="btn">
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+        <!-- END PAGE -->
+
+    </div>
+
+    <!-- END CONTAINER -->
+
+    {include file="footer.html"}

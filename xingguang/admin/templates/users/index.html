@@ -1,0 +1,85 @@
+{include file="header.html"}
+
+<!-- BEGIN CONTAINER -->
+
+<div class="page-container">
+
+    {include file="sidebar.html"}
+
+    <!-- BEGIN PAGE -->
+
+    <div class="page-content">
+
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <div id="portlet-config" class="modal hide">
+
+            <div class="modal-header">
+
+                <button data-dismiss="modal" class="close" type="button"></button>
+
+                <h3>Widget Settings</h3>
+
+            </div>
+
+            <div class="modal-body">
+
+                Widget settings form goes here
+
+            </div>
+
+        </div>
+
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <!-- BEGIN PAGE CONTAINER-->
+
+        <div class="container-fluid">
+
+            <!-- BEGIN PAGE HEADER-->
+
+           {include file="nav.html"}
+            <!--内容区域-->
+            <div id="main">
+                {if $smarty.session.flag=='y'} <div style="text-align: right"><a class="btn" href="{U('users','reg')}">用户注册</a></div>{/if}
+                <table class="table table-striped table-bordered table-hover mytable">
+                    <tr height="15%"><th>头像</th><th>序号</th><th>用户名</th><th>性别</th><th>爱好</th><th>城市</th><th>注册时间</th><th>操作</th></tr>
+                    {foreach from=$arr item=v}
+                    <tr height="15%" align="center">
+                        <td style="width: 5%"><img width="80%" height="80%"  src="{$v.avatar|default:'templates/img/3.jpeg'}"></td>
+                        <td><span class="label label-info">{$v['uid']}</span></td>
+                        <td><span class="label label-success">{$v['username']|htmlspecialchars}</span></td>
+                        <td><span class="label label-warning">{($v['sex']=='m')?'男':'女'}</span></td>
+                        <td><span class="label label-inverse">{if strstr($v['fav'],"sports")}体育 {/if}{if strstr($v['fav'],"reading")}阅读 {/if}{if strstr($v['fav'],"shopping")}购物 {/if}</span></td>
+                        <td><span class="label label-important">{($v['city']=='hefei')?'合肥':'芜湖'}</span></td>
+                        <td><span class="label label-success">{$v['regtime']|date_format:"%Y-%m-%d %H:%M:%S"}</span></td>
+                        <td>
+                            {if $smarty.session.flag=='y'||$smarty.session.uid==$v.uid}
+                            <i class="icon-pencil"></i> <a href={U('users','update',"uid={$v.uid}")}>编辑</a> | <i class="icon-trash"></i> <a onclick="return confirm('亲，数据无价，真的要删除吗？')"  href={U('users','delete',"uid={$v.uid}")}>删除</a>
+                            {/if}
+                            {if $smarty.session.uid==1}
+                            | <i class="icon-star"></i> <a href={U('users','quanxian',"uid={$v.uid}")}>权限</a>
+                            {/if}
+                        </td>
+
+                    </tr>
+                    {/foreach}
+                </table>
+                <div class="pc_overflow pagination pagination-large">
+                    <ul>
+                        {$pagestr}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- END PAGE -->
+
+</div>
+
+<!-- END CONTAINER -->
+
+{include file="footer.html"}

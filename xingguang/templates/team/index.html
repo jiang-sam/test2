@@ -1,0 +1,31 @@
+{include file="header.html"}
+    <!--设计团队-->
+    <div id="team" class="pc_overflow">
+        <div id="team_son" class="w980 mt50">
+            <!--左侧-->
+          {include file="sidebar.html"}
+            <!--右侧-->
+            <div id="right" class="fr ml5">
+                <div><span>设计团队　　　　　　　　　　　　　　　　　　　　　　　　　　　　　The design team</span></div>
+                <div><img src="{$smarty.const.TP}img/line.png" class="mt2" /></div>
+                {foreach from=$arr item=v key=k}
+                <div class="mt25 {if $k==0}pc_overflow{/if}">
+                    <div class="fl"><img src="admin/{$v.timage}" width="130" height="130"  class="pic"/></div>
+                    <div class="fr" style="width:580px;">
+                        <div><span class="text1">姓名：{$v.tname}   职称：{$v.tposition}   门店：{$v.tstore}   案例数：{$v.tcase}    人气：{$v.tpop}<br />设计宣言：{$v.tdesign} </span></div>
+                        <div class="xxxx fr"><a href={U('team','views',"tid={$v.tid}")}>详细信息>></a></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                {/foreach}
+                <div id="pages" style="float:right;">
+                    <ul>
+                        {$pagestr}
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+  {include file="footer.html"}

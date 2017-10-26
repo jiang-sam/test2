@@ -1,0 +1,75 @@
+{include file="header.html"}
+
+<!-- BEGIN CONTAINER -->
+
+<div class="page-container">
+
+    {include file="sidebar.html"}
+
+    <!-- BEGIN PAGE -->
+
+    <div class="page-content">
+
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <div id="portlet-config" class="modal hide">
+
+            <div class="modal-header">
+
+                <button data-dismiss="modal" class="close" type="button"></button>
+
+                <h3>Widget Settings</h3>
+
+            </div>
+
+            <div class="modal-body">
+
+                Widget settings form goes here
+
+            </div>
+
+        </div>
+
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+        <!-- BEGIN PAGE CONTAINER-->
+
+        <div class="container-fluid">
+
+            <!-- BEGIN PAGE HEADER-->
+
+            {include file="nav.html"}
+            <!--内容区域-->
+            <div id="main">
+                <form action={U('users','updateTodo',"uid={$resone.uid}")} method="post" enctype="multipart/form-data">
+                    用户名: <input type="text" name="username" value="{$resone.username}"/><br /><br />
+                    密　码: <input type="password" name="password" /><i>亲，密码为空不修改</i>
+                    <br /><br />
+                    性　别: <input type="radio" name="sex" value="m" {if $resone.sex=="m"} checked="checked"{/if} /> 男&nbsp;|&nbsp;<input type="radio" name="sex" value="f" {if $resone.sex=="f"} checked="checked"{/if}/> 女<br /><br />
+                    爱　好: <input type="checkbox" name="fav[]" value="reading" {if strstr($resone.fav,"reading")}checked{/if}/> 阅读&nbsp;<input type="checkbox" name="fav[]" value="sports" {if strstr($resone.fav,"sports")}checked{/if}/> 体育&nbsp;<input type="checkbox" name="fav[]" value="shopping" {if strstr($resone.fav,"shopping")}checked{/if}/> 购物<br /><br />
+                    城  市:
+                    <select name="city">
+                        <option value="hefei" {if $resone.city=="hefei"}selected{/if}>合肥</option>
+                        <option value="wuhu" {if $resone.city=="wuhu"}selected{/if}>芜湖</option>
+                    </select><br /><br />
+                    头  像: <input type="file" name="avatar" />
+                    {if !empty($resone.avatar)}
+                    <a href="{$resone.avatar}">亲，头像已存在，上传会覆盖</a>
+                    {/if}
+                    <br /><br />
+                    邮　箱: <input type="mail" name="mail" style="width:142px;" />
+                    <br /><br />
+                    <input type="submit" value="我要更新" class="btn">
+                </form>
+        </div>
+
+
+    </div>
+
+    <!-- END PAGE -->
+
+</div>
+
+<!-- END CONTAINER -->
+
+{include file="footer.html"}

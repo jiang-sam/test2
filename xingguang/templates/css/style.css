@@ -1,0 +1,152 @@
+/* CSS Document */
+/*公用*/
+body{ background:url(../img/bodybg.png);}
+#nav{ background:#403127; height:118px;}
+.navsonl{ width:168px; height:118px;}
+.navsonr{ width:710px; height:118px;}
+.navsonr ul{ width:710px; height:57px;}
+.navsonr ul li{ width:118px; height:57px; }
+.navsonr ul li a{width:118px; height:57px;color:#ffffff; font-size:16px; font-family:'微软雅黑'; text-align:center; display:block; overflow:hidden;}
+.navsonr ul li a:hover{ background:url(../img/navbg.png) no-repeat center center; }
+.navsonr ul li a span{line-height:15px; margin-top:12px;}
+.navsonr ul li a span.span2{ font-size:12px;}
+.banner{ height:652px; }
+
+
+#footer{ height:195px; background:#403127;}
+.footerson p{letter-spacing:2px; word-spacing:20px;color:#ffffff; line-height:20px;font-size:12px;font-family:'微软雅黑'; }
+.footerson p a{ color:#ffffff;}
+.footerson a:hover{ text-decoration:underline;}
+.footerson .p1 .a1{ font-size:16px;}
+.footerson img.img1{ margin-top:15px; margin-left:50px;}
+.footerson .footerb{ height:35px;}
+.footerson .footerb ul{ height:35px;}
+
+.lbt ul li{height:60px; line-height:60px; padding-left:60px; border-bottom:1px dashed #a2886f; }
+.lbt ul .li1 a{font-size:18px; color:#947961;background:url(../img/ico1.png) no-repeat left center; padding-left:20px;font-family:'微软雅黑';}
+.lbt ul .li2 a{font-size:18px; color:#947961;background:url(../img/ico2.png) no-repeat left center; padding-left:20px;font-family:'微软雅黑';}
+.lbt ul .li3 a{font-size:18px; color:#947961;background:url(../img/ico3.png) no-repeat left center; padding-left:20px;font-family:'微软雅黑';}
+.lbt ul .li4 a{font-size:18px; color:#947961;background:url(../img/ico4.png) no-repeat left center; padding-left:20px;font-family:'微软雅黑';}
+#leftbottom .img{background:url(../img/cel.png) no-repeat center;height:131px;}
+
+/*精品案例*/
+#xdjy{width:738px;}
+#xdjy_son{width:236px; height:214px; background:#f3eae0;}
+#xdjy_son .pic{margin:6px 0px 0 6px;}
+#right #xdjy_son span{font-size:13px; color:#876a53; font-family:'微软雅黑';text-align:center;line-height:40px;}
+#case_son .xlh{text-align:center;}
+#case_son .xlh a{font-size:13px; color:#876a53; font-family:'微软雅黑';line-height:60px;}
+#case_son .xlh a:hover{border-bottom:2px solid #876a53;}
+#right{width:740px !important;}
+#right .nav{width:723px; height:136px;}
+#right .nav_l{background:#ebdecc; width:95px;}
+#right .nav_r{background:#efe5d9;width:628px;}
+#right .nav_l ul li{line-height:40px;height:40px;border-bottom:1px dashed #a2886f;}
+#right .nav_r ul li{line-height:40px;height:40px;border-bottom:1px dashed #a2886f;}
+#right .nav_r ul li a{font-size:13px;font-family:'微软雅黑';color:#8a6f5a;}
+#right .nav_r ul li a:hover{color:#bf7833;}
+#right .nav_l span{font-size:16px;font-family:'微软雅黑';}
+#right .nav ul .last{border-bottom:0 none;}
+#case_son #lnav{width:217px; height:209px; border:4px solid #876a53;}
+#lnav .text{color:#FFF; font-family:'微软雅黑'; font-size:20px;background:#876a53;height:45px;text-align:center; line-height:40px;}
+#lnav .text1{font-size:12px;}
+#lnav .jpal ul li{padding-left:45px; border-bottom:1px dashed #a2886f; line-height:40px;}
+#lnav .jpal ul li a{font-size:16px; color:#947961;background:url(../img/jt.png) no-repeat left center; padding-left:40px;font-family:'微软雅黑';}
+#lnav .jpal ul .last{border-bottom:0 none;}
+
+/*设计团队*/
+#team #lnav{width:217px; height:95px; border:4px solid #876a53;}
+#team{background:url(../img/casebj.png) no-repeat center; height:920px;}
+#team #lnav a{font-size:16px; color:#947961;background:url(../img/jt.png) no-repeat left center; padding-left:40px; line-height:50px; text-align:center;}
+.sjtd{padding-left:45px; font-family:'微软雅黑';}
+#team #leftbottom,#case #leftbottom{margin-top:15px;}
+#team_son #right .pic{border:5px solid #c7b9a5;}
+#team_son #right .text1{font-family:'微软雅黑'; font-size:12px; color:#5b5b5b;line-height:35px;letter-spacing:2px;}
+#team_son .xxxx{width:103px; height:30px;background:#937653; color:#ffffff; font-size:12px; font-family:'微软雅黑'; line-height:30px; text-align:center;}
+#team_son .xxxx a{color:#ffffff;}
+
+/*联系我们*/
+#contact{background:url(../img/casebj.png) repeat-y center top;padding-bottom:40px;}
+#lnav{width:217px; height:135px; border:4px solid #876a53;}
+#lnav .text{color:#FFF; font-family:'微软雅黑'; font-size:20px;background:#876a53;height:45px;text-align:center; line-height:40px;}
+#lnav .text1{font-size:12px;}
+#lnav .lxwm ul li{padding-left:45px; border-bottom:1px dashed #a2886f; line-height:40px;}
+#lnav .lxwm ul li a{font-size:16px; color:#947961;background:url(../img/jt.png) no-repeat left center; padding-left:40px;font-family:'微软雅黑';}
+#lnav .lxwm ul .last{border-bottom:0 none;}
+#leftbottom{width:215px;height:457px;background:#f3eae0; border:4px solid #f2e9df;}
+#contact #leftbottom{margin-top:15px;}
+#right .tel_r span{font-family:'微软雅黑';color:#8a8175;line-height:31px; letter-spacing:1px;font-size:12px;}
+.map{width:735px;height:305px;border:5px solid #c6b8a2; }
+
+/*关于我们*/
+#about{background:url(../img/casebj.png) repeat-y center; padding-bottom:40px;}
+#lnav{width:217px; height:135px; border:4px solid #876a53;}
+#lnav .text{color:#FFF; font-family:'微软雅黑'; font-size:20px;background:#876a53;height:45px;text-align:center; line-height:40px;}
+#lnav .text1{font-size:12px;}
+#lnav .gywm ul li{padding-left:45px; border-bottom:1px dashed #a2886f; line-height:40px;}
+#lnav .gywm ul li a{font-size:16px; color:#947961;background:url(../img/jt.png) no-repeat left center; padding-left:40px;font-family:'微软雅黑';}
+#lnav .gywm ul .last{border-bottom:0 none;}
+#leftbottom{width:215px;height:457px;background:#f3eae0; border:4px solid #f2e9df;}
+#about #leftbottom{margin-top:15px;}
+#right .text{font-family:'微软雅黑';font-size:14px;color:#776a5d;text-indent:
+25px;line-height:25px;}
+#right .text1{font-family:'微软雅黑';font-size:14px;color:#d4874b;text-indent:
+25px;line-height:25px;}
+.gsys{height:92px;}
+#right span{font-size:18px;font-family:'微软雅黑';color:#947961;}
+
+/*产品展示*/
+#show{height:2200px;}
+#show span{font-size:18px;font-family:'微软雅黑';color:#947961;}
+#show .save{background:url(../img/ico8.png) no-repeat left center;height:
+66px;width:66px;}
+#show .save .text{color:#e5e2e1;line-height:64px;}
+#show .text1{color:#6d6c6c;font-size:14px;line-height:27px; letter-spacing:1px;width:338px;}
+#show .text2{line-height:54px;}
+#show .pic{background:url(../img/pic1.png) no-repeat center;height:281px;}
+#show .pic1{background:url(../img/pic1.png) no-repeat center;height:281px;margin-top:10px;}
+#show .pic2{background:url(../img/pic2.png) no-repeat center;height:281px;margin-top:10px;}
+
+.slide-wp{width: 1920px;height:652px;position: relative;left:50%;margin-left:-950px;}
+.slides, .slide-bg{height: 652px;background-color: #fff;overflow: hidden;}
+.slidesjs-pagination{position: absolute;top: 625px;left: 50%;z-index: 11;margin-left: -52px;}
+.slidesjs-pagination li{float: left;margin-right: 10px;}
+.slidesjs-pagination li a{text-indent: -9999px;background-color: #744b23;display: inline-block; *display:block;_display: block;width: 25px;height: 7px;padding: 0;_height: 2px;_line-height: 1;}
+.slidesjs-pagination li a.active{background-color: #fff;}
+.slideChild{width: 945px;margin: 0 auto;z-index: 10;height: 652px;position: relative;}
+.slideChild a.opa{position: absolute;top: 0;left: 0;display: inline-block; *display:block;_display: block;width: 100px;height: 50px;background-color: #fff;filter: alpha(opacity=0);-ms-filter: "alpha(opacity=0)";opacity: 0;}
+.slideImg{position: absolute;top: 0;left: 0;z-index: 9;}
+
+
+#pages {
+    font-family: 宋体;
+    padding: 14px 0 10px;
+}
+#pages li {
+    display: inline;
+    padding:0 5px;
+}
+#pages a {
+    background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid #e3e3e3;
+    color: #333333;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 12px;
+    text-align: center;
+}
+#pages a:hover {
+    background: none repeat scroll 0 0 #f1f1f1;
+    color: #000000;
+    text-decoration: none;
+}
+#pages span {
+    background: none repeat scroll 0 0 #b60000;
+    color: #ffffff;
+    display: inline-block;
+    height: 23px;
+    line-height: 23px;
+    padding: 0 10px;
+    text-align: center;
+}

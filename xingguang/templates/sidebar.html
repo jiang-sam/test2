@@ -1,0 +1,36 @@
+<div id="left" class="fl">
+    <div id="lnav" style="height:auto;">
+        {if $smarty.get.c=='about'}
+        <div class="text"><span>联系我们<span class="text1">&nbsp; About us</span></span></div>
+        {/if}
+        {if $smarty.get.c=='cases'}
+        <div class="text"><span>精品案例<span class="text1">&nbsp; Cases</span></span></div>
+        {/if}
+        {if $smarty.get.c=='team'}
+        <div class="text"><span>设计团队<span class="text1">&nbsp; Team</span></span></div>
+        {/if}
+        {if $smarty.get.c=='contact'}
+        <div class="text"><span>联系我们<span class="text1">&nbsp; Contact us</span></span></div>
+        {/if}
+        <div class="lxwm">
+            <ul>
+                <li><a href="{U('about','index')}">&nbsp;&nbsp;关于我们</a></li>
+                <li><a href="{U('cases','index')}">&nbsp;&nbsp;精品案例</a></li>
+                <li><a href="{U('team','index')}">&nbsp;&nbsp;设计团队</a></li>
+                <li><a href="{U('contact','index')}">&nbsp;&nbsp;联系我们</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div id="leftbottom" class="pc_overflow">
+        <div class="lbt">
+            <ul>
+                <li class="li1"><a href="index.php">&nbsp;&nbsp;参观报名</a></li>
+                <li class="li2"><a href="{U('make','yuyue')}">&nbsp;&nbsp;预约设计</a></li>
+                <li class="li3"><a href="http://wpa.qq.com/msgrd?v=3&uin=2254682944" target="_blank">&nbsp;&nbsp;在线咨询</a></li>
+                <li class="last li4"><a href="{U('contact','index')}">&nbsp;&nbsp;联系我们</a></li>
+            </ul>
+        </div>
+        <div class="img mt50"></div>
+    </div>
+</div>
